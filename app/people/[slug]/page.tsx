@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { ArrowLeft, UserRound } from "lucide-react";
+export default async function PersonProfile({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <main className="collection-page"><header className="collection-top"><Link href="/" className="collection-brand">Dr. പപ്പനും പിള്ളേരും <span>· 2025 CSE</span></Link><Link href="/people" className="collection-back"><ArrowLeft size={15} /> All people</Link></header><section className="collection-hero profile-placeholder"><span className="profile-icon"><UserRound size={35} /></span><span className="eyebrow">BATCH PROFILE · {slug.toUpperCase().replaceAll("-", " ")}</span><h1>This story is waiting<br />to be told.</h1><p>Student profiles will be published only after the person has reviewed and approved their details and photograph.</p><div className="collection-paper"><strong>Profile not found in the demo directory.</strong><small>No identity has been invented for this route.</small></div><div className="collection-links"><Link href="/people">Browse the batch <ArrowLeft size={15} /></Link><Link href="/">Back to home</Link></div></section><footer className="collection-footer"><span>WE WERE HERE. WE LIVED IT.</span><span>TKM COLLEGE OF ENGINEERING · B.TECH CSE · 2025</span></footer></main>;
+}
